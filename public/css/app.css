@@ -49749,7 +49749,7 @@ textarea.form-control-lg {
 
 header {
   height: 100vh;
-  background: url("../../public/images/hero-bg.jpg");
+  background: url("../../../../public/images/hero.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -49758,8 +49758,8 @@ nav {
   background-color: rgba(12, 11, 9, 0.61);
   padding: 2vh 3vw;
   position: fixed;
-  top: 1;
-  z-index: 9999;
+  top: 2;
+  z-index: 999;
   width: 100%;
 }
 
@@ -49829,6 +49829,39 @@ nav {
   border-radius: 8px;
 }
 
+.my_title {
+  font-size: 48px;
+  color: #fff;
+}
+
+.play {
+  width: 70px;
+  height: 70px;
+  background: #CDA45E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.play:hover {
+  transform: scale(1.1);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+}
+
+@media (max-width: 425px) {
+  .buttons {
+    justify-content: center;
+  }
+}
 @font-face {
   font-family: "titles";
   src: url(../../public/fonts/Questrial-Regular.ttf);

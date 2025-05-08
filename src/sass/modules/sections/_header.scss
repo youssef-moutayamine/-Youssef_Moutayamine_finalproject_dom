@@ -1,20 +1,20 @@
 .contact:hover {
     color: $gold !important;
 }
-
-header {
+header{
     height: 100vh;
-    background: url('../../public/images/hero-bg.jpg');
+    background: url('../../../../public/images/hero.png');
     background-repeat: no-repeat;
     background-size: cover;
-}
+    }
+
 
 nav {
     background-color: rgb(12 11 9 / 61%);
     padding: 2vh 3vw;
     position: fixed;
-    top: 1;
-    z-index: 9999;
+    top: 2;
+    z-index: 999;
     width: 100%;
 
 }

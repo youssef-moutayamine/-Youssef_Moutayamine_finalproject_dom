@@ -39,7 +39,7 @@
             </div>
             <div class="navigation">
                 <ul class="list-unstyled d-flex gap-5 m-0">
-                    <li><a class="nav-links contact" href="#">Home</a></li>
+                    <li><a class="nav-links contact" href="#home">Home</a></li>
                     <li><a class="nav-links contact" href="#about">About</a></li>
                     <li><a class="nav-links contact" href="#menu">Menu</a></li>
                     <li><a class="nav-links contact" href="#specials">Specials</a></li>
@@ -61,8 +61,8 @@
                     <li><a class="nav-links contact" href="#contact">Contact</a></li>
                 </ul>
             </div>
-        <!-- !Button of my modal  -->
-        <button class="book-btn" my-attribute="modal" class="mybutton">Book table</button>
+            <!-- !Button of my modal  -->
+            <button class="book-btn" my-attribute="modal" class="mybutton">Book table</button>
 
         </nav>
 
@@ -70,59 +70,81 @@
 
         <!-- Modal -->
         <div class="pack">
-        <div class="content close " id="modal">
-            <!-- Modal Content -->
-            <div class="d-flex flex-column  ">
-                <div class="modalHeader">
-                    <h1>Book a table :</h1>
+            <div class="content close " id="modal">
+                <!-- Modal Content -->
+                <div class="d-flex flex-column  ">
+                    <div class="modalHeader">
+                        <h1>Book a table :</h1>
+                    </div>
+                    <div class="">
+                        <div>
+                            <h3>reserve table :</h3>
+                        </div>
+                        <div class="myinputs">
+                            <div class="d-flex align-items-center gap-2">
+                                <input class="" type="radio">
+                                <h5>Table 1</h5>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2">
+                                <input class="" type="radio">
+                                <h5>Table 2</h5>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2">
+                                <input class="" type="radio">
+                                <h5>Table 3</h5>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2">
+                                <input class="" type="radio">
+                                <h5>Table 4</h5>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2">
+                                <input class="" type="radio">
+                                <h5>Table 5</h5>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2">
+                                <input class="" type="radio">
+                                <h5>Table 6</h5>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
-                <div class="">
-                    <div>
-                        <h3>reserve table :</h3>
-                    </div>
-                    <div class="myinputs">
-                        <div class="d-flex align-items-center gap-2">
-                            <input class="" type="radio">
-                            <h5>Table 1</h5>
-                        </div>
-
-                        <div class="d-flex align-items-center gap-2">
-                            <input class="" type="radio">
-                            <h5>Table 2</h5>
-                        </div>
-
-                        <div class="d-flex align-items-center gap-2">
-                            <input class="" type="radio">
-                            <h5>Table 3</h5>
-                        </div>
-
-                        <div class="d-flex align-items-center gap-2">
-                            <input class="" type="radio">
-                            <h5>Table 4</h5>
-                        </div>
-
-                        <div class="d-flex align-items-center gap-2">
-                            <input class="" type="radio">
-                            <h5>Table 5</h5>
-                        </div>
-
-                        <div class="d-flex align-items-center gap-2">
-                            <input class="" type="radio">
-                            <h5>Table 6</h5>
-                        </div>
-
-                    </div>
-
+                <div class="d-flex align-items-center justify-content-end gap-2  ">
+                    <button class="red" id="hide" type="submit">Close</button>
+                    <button class="green" id="submit" type="submit">Reserve</button>
                 </div>
             </div>
-            <div class="d-flex align-items-center justify-content-end gap-2  ">
-                <button class="red" id="hide" type="submit">Close</button>
-                <button class="green" id="submit" type="submit">Reserve</button>
+        </div>
+
+        <!-- ~hero section -->
+        <main  class=" d-flex flex-lg-row flex-column align-items-center justify-content-lg-around justify-content-center px-2  mt-25 ">
+            <div class="">
+                <h2 class="my_title">Welcome to <span class="text-warning">Restauranlty</span></h2>
+                <p class="text-white fs-3">Delivering great food for more than 18 years!</p>
+                <div class="buttons">
+                    <button class="book-btn">Our MENU</button>
+                    <button class="book-btn">BOOK A TABLE</button>
+                </div>
             </div>
-        </div>
-    </div>
-        </div>
+            <div class="play-button d-flex justify-content-center align-items-center mt-4 mt-md-0">
+                <div class="play">
+                    <i class="bi bi-play-fill"></i>
+                </div>
+            </div>
+        </main>
+
     </header>
+
+
+
+
+
 
     <script src=./public/js/app.js></script>
 
