@@ -1,0 +1,131 @@
+.containere {
+    padding: 2vh 3vw;
+    background-color: #191815;
+}
+
+.head {
+    margin-bottom: 40px;
+}
+
+.menu {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 10px;
+    position: relative;
+}
+.menu::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 120px;
+    background-color: $gold;
+    top: 50%;
+    margin-left: 15px;
+}
+
+.menu-h1 {
+    font-size: 32px;
+    color: $gold;
+    margin-bottom: 30px;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 1vw;
+}
+
+.filter-button {
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.filter-button.active {
+    color: #fff;
+    position: relative;
+}
+
+.filter-button.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background-color: $gold;
+}
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 30px;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.menu-box.hidden {
+    display: none;
+}
+
+.pictures {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.pictures img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.baaag {
+    flex: 1;
+}
+
+.heroo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.item-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: #00000098;
+}
+
+.price {
+    color: $gold;
+    font-weight: bold;
+}
+
+.paragraphe {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
