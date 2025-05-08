@@ -1,0 +1,30 @@
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+
+$gold :#CDA45E;
+$white : rgb(255 255 255 / 70%)  ;
+$btn-color : #3E5055;
+$orange :#E87532 ;
+$paragraph_color : #53575A;
+$border-btn: 25px;
+$border :15px;
+$shadow : 1px 0.5px 5px rgba(0, 0, 0, 0.2);
+
+
+
+
+$custom-colors: (
+  "gold": $gold,
+  "white":$white
+ 
+  
+);
+
+$theme-colors: map-merge($custom-colors , $theme-colors);
+
+$spacer : 1vh;
+@for $i from 1 through 100 {
+  $spacers: map-merge($spacers, ($i : $spacer * $i));
+}

@@ -1,0 +1,89 @@
+.contact:hover {
+    color: $gold !important;
+}
+
+header {
+    height: 100vh;
+    background: url('../../public/images/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav {
+    background-color: rgb(12 11 9 / 61%);
+    padding: 2vh 3vw;
+    position: fixed;
+    top: 1;
+    z-index: 9999;
+    width: 100%;
+
+}
+
+
+
+.nav-links {
+    text-decoration: none;
+    color: #fff
+}
+
+.book-btn {
+    padding: 1vh 3vw;
+    color: #fff;
+    border: 2px solid $gold;
+    border-radius: 25px;
+    background-color: rgb(12 11 9 / 61%);
+}
+
+.book-btn:hover {
+    background-color: $gold !important;
+}
+
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.321);
+    width: 100vw;
+    height: 100vh; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+}
+.content {
+    padding: 2vh;
+    height: fit-content;
+    width: 40%;
+    background-color: rgb(230, 240, 240);
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 2vh;
+    z-index: 9999;
+
+}
+
+
+.modalHeader {
+    border-bottom: 2px solid gray;
+}
+
+.myinputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vh;
+}
+
+.close {
+    display: none;
+}
+.green{
+    background-color: green;
+    padding: 1vh 3vw;
+    border: 0;
+    border-radius: 8px;
+    
+}
+.red{
+    background-color: rgb(214, 7, 7);
+    padding: 1vh 3vw;
+    border: 0;
+    border-radius: 8px; 
+}

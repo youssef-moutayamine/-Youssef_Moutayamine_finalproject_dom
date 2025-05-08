@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Youssef_Moutayamine_project_final_DOM</title>
+    <link rel=stylesheet href=./public/css/app.css>
+</head>
+
+<body>
+    <header>
+
+        <div class="d-flex align-items-center justify-content-between gap-2 px-3">
+
+            <div class="d-flex gap-1 ">
+                <i class="bi bi-envelope text-gold "></i>
+                <a class="text-decoration-none text-white  contact" href="">contact@example.com</a>
+
+                <div class="d-flex gap-1 ">
+                    <i class="bi bi-phone text-gold  "></i>
+                    <p class="text-white">+1 5589 55488 55</p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-1">
+                <p class="text-gold">En</p>
+                <p class="text-white">/</p>
+                <p class="text-white contact">De</p>
+            </div>
+
+        </div>
+
+        <!-- *the navigation bar -->
+
+        <nav id="home" class="d-flex justify-content-evenly align-items-center ">
+            <div>
+                <h1 class="text-white">Restaurantly</h1>
+            </div>
+            <div class="navigation">
+                <ul class="list-unstyled d-flex gap-5 m-0">
+                    <li><a class="nav-links contact" href="#">Home</a></li>
+                    <li><a class="nav-links contact" href="#about">About</a></li>
+                    <li><a class="nav-links contact" href="#menu">Menu</a></li>
+                    <li><a class="nav-links contact" href="#specials">Specials</a></li>
+                    <li><a class="nav-links contact" href="#events">Events</a></li>
+                    <li><a class="nav-links contact" href="#chefs">Chefs</a></li>
+                    <li><a class="nav-links contact" href="#gallery">Gallery</a></li>
+                    <li id="menu-list">
+                        <a class="nav-links dropdown-toggle text-nav-color" href="#" id="navbarDarkDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink"
+                            id="dropdown-list">
+                            <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
+                            <li><a class="dropdown-item" href="#">Dropdown 2</a></li>
+                            <li><a class="dropdown-item" href="#">Dropdown</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-links contact" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        <!-- !Button of my modal  -->
+        <button class="book-btn" my-attribute="modal" class="mybutton">Book table</button>
+
+        </nav>
+
+        <!-- &modal content  -->
+
+        <!-- Modal -->
+        <div class="pack">
+        <div class="content close " id="modal">
+            <!-- Modal Content -->
+            <div class="d-flex flex-column  ">
+                <div class="modalHeader">
+                    <h1>Book a table :</h1>
+                </div>
+                <div class="">
+                    <div>
+                        <h3>reserve table :</h3>
+                    </div>
+                    <div class="myinputs">
+                        <div class="d-flex align-items-center gap-2">
+                            <input class="" type="radio">
+                            <h5>Table 1</h5>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <input class="" type="radio">
+                            <h5>Table 2</h5>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <input class="" type="radio">
+                            <h5>Table 3</h5>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <input class="" type="radio">
+                            <h5>Table 4</h5>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <input class="" type="radio">
+                            <h5>Table 5</h5>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <input class="" type="radio">
+                            <h5>Table 6</h5>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-end gap-2  ">
+                <button class="red" id="hide" type="submit">Close</button>
+                <button class="green" id="submit" type="submit">Reserve</button>
+            </div>
+        </div>
+    </div>
+        </div>
+    </header>
+
+    <script src=./public/js/app.js></script>
+
+</body>
+
+</html>
