@@ -1,4 +1,4 @@
-.my_title{
+.my_title {
     font-size: 48px;
     color: #fff;
 }
@@ -21,17 +21,17 @@
 }
 
 
-.buttons{
+.buttons {
     display: flex;
     align-items: center;
     gap: 1vh;
 
 }
 
-@media (max-width: 425px){
-    .buttons{
-       
-   justify-content: center;
-    
+@media (max-width: 480px) {
+    .buttons {
+
+        justify-content: center;
+
     }
 }

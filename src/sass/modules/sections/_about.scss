@@ -1,0 +1,35 @@
+.about {
+    position: relative;
+    height: 100vh;
+    background: url('../../../../public/images/about-bg.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: -1;
+}
+
+.texts{
+    width: 50%;
+}
+.image{
+    border: 5px solid $dark-gray;
+    width: fit-content ;
+    transition: transform 0.3s ease-in-out
+}
+.image > img {
+    width: 545px;
+}
+
+.image:hover{
+    transform: scale(1.1);
+}
+
