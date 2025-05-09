@@ -49931,6 +49931,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  font-family: "titles";
+}
+
 .contact:hover {
   color: #CDA45E !important;
 }
@@ -50434,6 +50438,14 @@ nav {
 .party-special {
   color: rgba(255, 255, 255, 0.7);
   font-weight: 800;
+}
+
+.gallery {
+  transition: transform 0.8s;
+}
+
+.gallery:hover {
+  transform: scale(1.1);
 }
 
 @font-face {
