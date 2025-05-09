@@ -50021,6 +50021,38 @@ nav {
   border-radius: 8px;
 }
 
+@media (max-width: 480px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+  }
+  .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.97);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  .navigation.active {
+    transform: translateY(0);
+  }
+  .navigation ul {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem 0;
+  }
+  .nav-links {
+    font-size: 1.2rem;
+    color: white;
+  }
+  .book-btn {
+    display: none;
+  }
+}
 .my_title {
   font-size: 48px;
   color: #fff;
@@ -50446,6 +50478,123 @@ nav {
 
 .gallery:hover {
   transform: scale(1.1);
+}
+
+.chefs {
+  background-color: #0c0b09;
+  height: 100vh;
+}
+
+.sac {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.sac .chef {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1vw;
+  width: 27vw;
+  height: 57vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 26rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+.sac .chef::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 70%, rgba(0, 0, 0, 0) 100%);
+  opacity: -1;
+  transition: opacity 0.4s;
+  z-index: 1;
+}
+.sac .chef .cheft-s-titles {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+  z-index: 2;
+  position: relative;
+}
+.sac .chef:hover::after {
+  opacity: 1;
+}
+.sac .chef:hover .cheft-s-titles {
+  opacity: 1;
+  visibility: visible;
+}
+.sac .chef h1, .sac .chef .h1 {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "navbar";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+.sac .chef p {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  padding-bottom: 1rem;
+}
+.sac .chef .social-media {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.sac .chef .social-media i:hover {
+  color: #CDA45E;
+}
+.sac .first-chef {
+  background-image: url(../../../../../public/images/chefs-1.jpg);
+}
+.sac .second {
+  background-image: url(../../../../../public/images/chefs-2.jpg);
+}
+.sac .last {
+  background-image: url(../../../../../public/images/chefs-3.jpg);
+}
+
+@media (max-width: 480px) {
+  #chefs {
+    height: 210vh;
+  }
+  #chefs .top-left-title {
+    padding-left: 1rem;
+  }
+  #chefs .t-main {
+    flex-direction: column;
+  }
+  #chefs .t-main .chef {
+    width: 95vw;
+  }
+}
+.contact-section {
+  background-color: #191815;
+  padding: 2vh;
+}
+
+.icons {
+  background-color: #CDA45E;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 @font-face {

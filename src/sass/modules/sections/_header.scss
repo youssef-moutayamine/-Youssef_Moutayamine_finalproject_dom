@@ -92,3 +92,40 @@ nav {
     border: 0;
     border-radius: 8px; 
 }
+@media (max-width: 480px) {
+    nav {
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+    }
+    
+    .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.97);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    }
+    
+    .navigation.active {
+    transform: translateY(0);
+    }
+    
+    .navigation ul {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem 0;
+    }
+    
+    .nav-links {
+    font-size: 1.2rem;
+    color: white;
+    }
+    
+    .book-btn {
+    display: none;
+    }
+    }
