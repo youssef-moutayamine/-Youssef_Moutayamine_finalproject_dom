@@ -50088,12 +50088,13 @@ nav {
 }
 .about {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background: url("../../../../public/images/about-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   z-index: 1;
+  padding: 4rem 0;
 }
 
 .about::before {
@@ -50107,24 +50108,62 @@ nav {
   z-index: -1;
 }
 
+.about .d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 .texts {
-  width: 50%;
+  width: 100%;
+  max-width: 600px;
 }
 
 .image {
-  border: 5px solid #636260;
+  border: 5px solid var(--dark-gray, #333);
   width: fit-content;
   transition: transform 0.3s ease-in-out;
+  margin: 0 auto;
 }
 
 .image > img {
-  width: 545px;
+  width: 100%;
+  max-width: 545px;
+  height: auto;
 }
 
 .image:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
+.fix {
+  width: 87vw;
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 3rem 1rem;
+  }
+  .texts {
+    text-align: center;
+  }
+  .about ul.list-unstyled li {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  .about ul.list-unstyled li i {
+    margin-top: 5px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .image:hover {
+    transform: none;
+  }
+}
 .why-section {
   padding: 6vh;
   background: #000;
@@ -50597,6 +50636,91 @@ nav {
   border-radius: 5px;
 }
 
+.reviews {
+  background-color: #0C0B09;
+}
+
+#caro2 {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.review-card {
+  max-width: 400px;
+  background-color: transparent;
+  text-align: left;
+  display: none;
+  flex-direction: column;
+}
+
+.quote-container {
+  background-color: #111;
+  padding: 20px 30px;
+  border-radius: 8px;
+  position: relative;
+  font-style: italic;
+  color: #ccc;
+}
+
+.quote-symbol {
+  font-size: 32px;
+  color: #CDA45E;
+  font-style: normal;
+}
+
+.quote-symbol.start {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.quote-symbol.end {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.user-profile {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 4px solid #111;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.user-info h3, .user-info .h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.user-info p {
+  margin: 2px 0 0;
+  color: #999;
+}
+
+.slider-controls {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  #caro2 {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .review-card {
+    width: 90%;
+  }
+}
 @font-face {
   font-family: "titles";
   src: url(../../public/fonts/Questrial-Regular.ttf);

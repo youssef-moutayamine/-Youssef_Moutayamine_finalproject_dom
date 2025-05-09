@@ -1,11 +1,49 @@
+// .about {
+//     position: relative;
+//     height: 100vh;
+//     background: url('../../../../public/images/about-bg.jpg') ;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     z-index: 1;
+// }
+
+// .about::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: 100%;
+//     background-color: rgba(0, 0, 0, 0.6); 
+//     z-index: -1;
+// }
+
+// .texts{
+//     width: 50%;
+// }
+// .image{
+//     border: 5px solid $dark-gray;
+//     width: fit-content ;
+//     transition: transform 0.3s ease-in-out
+// }
+// .image > img {
+//     width: 545px;
+// }
+
+// .image:hover{
+//     transform: scale(1.1);
+// }
+
 .about {
     position: relative;
-    height: 100vh;
-    background: url('../../../../public/images/about-bg.jpg') ;
+    min-height: 100vh;
+    background: url('../../../../public/images/about-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     z-index: 1;
+    padding: 4rem 0;
 }
 
 .about::before {
@@ -15,23 +53,67 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: -1;
 }
 
-.texts{
-    width: 50%;
+.about .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
-.image{
-    border: 5px solid $dark-gray;
-    width: fit-content ;
-    transition: transform 0.3s ease-in-out
+
+.texts {
+    width: 100%;
+    max-width: 600px;
 }
+
+.image {
+    border: 5px solid var(--dark-gray, #333);
+    width: fit-content;
+    transition: transform 0.3s ease-in-out;
+    margin: 0 auto;
+}
+
 .image > img {
-    width: 545px;
+    width: 100%;
+    max-width: 545px;
+    height: auto;
 }
 
-.image:hover{
-    transform: scale(1.1);
+.image:hover {
+    transform: scale(1.05);
 }
 
+.fix {
+    width: 87vw;
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 3rem 1rem;
+    }
+    
+    .texts {
+        text-align: center;
+    }
+    
+    .about ul.list-unstyled li {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+    
+    .about ul.list-unstyled li i {
+        margin-top: 5px;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+    
+    .image:hover {
+        transform: none; 
+    }
+}
