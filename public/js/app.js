@@ -80,3 +80,18 @@ setInterval(() => {
 }, 3000);
 
 showSlides(currentcaro);
+
+
+let list = document.getElementById("list");
+console.log(list);
+
+ let navLinks = document.querySelector('.navigation');
+ console.log(navLinks);
+ 
+ list.addEventListener('click', () => {
+    // navLinks.classList.add('right');
+    navLinks.classList.toggle("right");
+
+  });
+
+ 

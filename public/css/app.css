@@ -50021,6 +50021,10 @@ nav {
   border-radius: 8px;
 }
 
+.right {
+  right: 0 !important;
+}
+
 @media (max-width: 480px) {
   nav {
     flex-wrap: wrap;
@@ -50028,14 +50032,19 @@ nav {
   }
   .navigation {
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.97);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    transform: translateY(-200%);
-    transition: transform 0.3s ease;
-    z-index: 999;
+    background-color: white;
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    top: 0%;
+    right: -200%;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5vh !important;
+    padding: 5vw !important;
+    color: black;
   }
   .navigation.active {
     transform: translateY(0);
@@ -50047,7 +50056,7 @@ nav {
   }
   .nav-links {
     font-size: 1.2rem;
-    color: white;
+    color: rgb(27, 26, 26);
   }
   .book-btn {
     display: none;
@@ -50719,6 +50728,72 @@ nav {
   }
   .review-card {
     width: 90%;
+  }
+}
+.container1 {
+  padding-bottom: 2vh;
+  border-bottom: 1px solid #1e1c18;
+}
+
+.footer p {
+  color: #999;
+}
+
+.links {
+  color: rgba(255, 255, 255, 0.7);
+}
+.links div {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+.links div a {
+  color: #B6B9B2;
+}
+
+.last-of {
+  flex-direction: column;
+  gap: 2vh;
+}
+.last-of h4, .last-of .h4 {
+  color: white;
+}
+.last-of p {
+  color: #999;
+}
+
+.copyright {
+  padding-top: 2vh;
+  color: #999;
+}
+
+.maDiv {
+  border: 2px solid #1e1c18;
+  border-radius: 5px;
+  display: flex;
+  gap: 5vh;
+}
+.maDiv input {
+  padding: 1.5vh 5vh;
+  border: none;
+  background-color: transparent;
+}
+.maDiv button {
+  border-radius: 0 5px 5px 0;
+  padding: 1.5vh 5vh;
+  background-color: #CDA45E;
+  border: none;
+}
+
+@media (max-width: 428px) {
+  #footer {
+    padding: 0;
+  }
+  #footer p {
+    padding: 0;
+  }
+  #footer div {
+    gap: 2vh;
   }
 }
 @font-face {
