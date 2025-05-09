@@ -50053,8 +50053,10 @@ nav {
 .about {
   position: relative;
   height: 100vh;
-  background: url("../../../../public/images/about-bg.jpg") no-repeat center center;
+  background: url("../../../../public/images/about-bg.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   z-index: 1;
 }
 
@@ -50138,7 +50140,6 @@ nav {
 }
 
 .box:hover {
-  transform: translateY(-5px);
   background-color: #CDA45E;
   color: black !important;
 }
@@ -50294,6 +50295,36 @@ nav {
     grid-template-columns: 1fr;
   }
 }
+.event {
+  background-image: url(../../../../public/images/events-bg.jpg);
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.carousel__items > img {
+  width: 546px;
+}
+
+.party-special {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+}
+
 @font-face {
   font-family: "titles";
   src: url(../../public/fonts/Questrial-Regular.ttf);
