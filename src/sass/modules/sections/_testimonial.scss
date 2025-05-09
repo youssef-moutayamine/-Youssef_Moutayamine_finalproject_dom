@@ -5,6 +5,7 @@
 #caro2 {
     display: flex;
     justify-content: center;
+    gap: 2vw;
     padding: 40px;
 }
 
@@ -23,6 +24,7 @@
     position: relative;
     font-style: italic;
     color: #ccc;
+    
 }
 
 .quote-symbol {

@@ -50652,6 +50652,7 @@ nav {
 #caro2 {
   display: flex;
   justify-content: center;
+  gap: 2vw;
   padding: 40px;
 }
 

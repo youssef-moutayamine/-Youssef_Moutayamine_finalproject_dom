@@ -25,13 +25,13 @@ hide.addEventListener("click", () => {
 
 // filter buttons
 
-document.addEventListener('click',  () => {
+document.addEventListener('click', () => {
     let filterButtons = document.querySelectorAll('.filter-button');
     let menuItems = document.querySelectorAll('.menu-list .items');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function () {
-            
+
             filterButtons.forEach(btn => btn.classList.remove('active'));
 
             this.classList.add('active');
@@ -42,7 +42,7 @@ document.addEventListener('click',  () => {
                 const category = item.querySelector('.pictures').getAttribute('data-name');
 
                 if (filterValue === 'all' || filterValue === category) {
-                    item.style.display = 'flex'; 
+                    item.style.display = 'flex';
                 } else {
                     item.style.display = 'none';
                 }
@@ -50,7 +50,7 @@ document.addEventListener('click',  () => {
         });
     });
 });
-// carousel
+// *carousel testimonial
 let currentcaro = 0;
 let slides2 = document.querySelectorAll('.review-card');
 let slidesToShow = 3;
@@ -85,13 +85,13 @@ showSlides(currentcaro);
 let list = document.getElementById("list");
 console.log(list);
 
- let navLinks = document.querySelector('.navigation');
- console.log(navLinks);
- 
- list.addEventListener('click', () => {
-    // navLinks.classList.add('right');
+let navLinks = document.querySelector('.navigation');
+console.log(navLinks);
+
+list.addEventListener('click', () => {
     navLinks.classList.toggle("right");
 
-  });
+});
 
- 
+
+
