@@ -50125,7 +50125,7 @@ nav {
     height: 100vh;
     top: 0%;
     right: -200%;
-    transition: 0.5s;
+    transition: right 0.5s;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -50135,6 +50135,9 @@ nav {
   }
   .navigation.active {
     transform: translateY(0);
+  }
+  .navigation.right {
+    right: 0 !important;
   }
   .navigation ul {
     flex-direction: column !important;
@@ -50410,7 +50413,7 @@ nav {
 
 .menu-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(500px, 95vw), 1fr));
   gap: 30px;
 }
 
@@ -50468,9 +50471,29 @@ nav {
   line-height: 1.4;
 }
 
+@media (max-width: 768px) {
+  .menu-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+}
 @media (max-width: 480px) {
-  .menu-grid {
+  .menu-list {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .items {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .items .pictures {
+    margin-bottom: 15px;
+  }
+  .items .heroo {
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
   }
 }
 .specials {
@@ -50575,6 +50598,7 @@ nav {
 .image-box {
   border-radius: 50%;
   overflow: hidden;
+  max-width: 100%;
   width: 320px;
   height: 320px;
   margin-left: auto;
@@ -50589,11 +50613,17 @@ nav {
 @media (max-width: 768px) {
   .image-box {
     margin: 30px auto 0;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
   .specials-label::after {
     width: 80px;
+  }
+}
+@media (max-width: 480px) {
+  .image-box {
+    width: 150px;
+    height: 150px;
   }
 }
 .event {
@@ -50626,6 +50656,11 @@ nav {
   font-weight: 800;
 }
 
+@media (max-width: 480px) {
+  .carousel__items > img {
+    width: 350px !important;
+  }
+}
 .gallery {
   transition: transform 0.8s;
 }
@@ -50636,7 +50671,8 @@ nav {
 
 .chefs {
   background-color: #0c0b09;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 6vh 0;
 }
 
 .sac {
@@ -50644,6 +50680,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 .sac .chef {
   position: relative;
@@ -50653,13 +50690,14 @@ nav {
   justify-content: flex-end;
   gap: 1vw;
   width: 27vw;
+  max-width: 350px;
   height: 57vh;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 26rem;
+  background-size: cover;
   padding: 1.5rem;
   overflow: hidden;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .sac .chef::after {
   content: "";
@@ -50724,18 +50762,38 @@ nav {
   background-image: url(../../../../../public/images/chefs-3.jpg);
 }
 
+@media (max-width: 768px) {
+  .chefs {
+    min-height: auto;
+    padding: 4vh 0;
+  }
+  .sac {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .sac .chef {
+    width: 48%;
+    height: 45vh;
+    max-width: unset;
+  }
+}
 @media (max-width: 480px) {
-  #chefs {
-    height: 210vh;
+  .chefs {
+    min-height: auto;
+  }
+  .sac {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .sac .chef {
+    width: 90vw;
+    max-width: 320px;
+    height: 50vh;
+    min-width: unset;
   }
   #chefs .top-left-title {
     padding-left: 1rem;
-  }
-  #chefs .t-main {
-    flex-direction: column;
-  }
-  #chefs .t-main .chef {
-    width: 95vw;
   }
 }
 .contact-section {
@@ -50892,7 +50950,7 @@ nav {
   border: none;
 }
 
-@media (max-width: 428px) {
+@media (max-width: 480px) {
   #footer {
     padding: 0;
   }
@@ -50901,6 +50959,12 @@ nav {
   }
   #footer div {
     gap: 2vh;
+  }
+  .maDiv {
+    width: 50%;
+  }
+  .maDiv input {
+    display: none;
   }
 }
 @font-face {

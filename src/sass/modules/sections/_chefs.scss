@@ -1,6 +1,7 @@
 .chefs {
     background-color: #0c0b09;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 6vh 0;
     }
 
     .sac {
@@ -8,6 +9,7 @@
         align-items: center;
         justify-content: center;
         gap: 1.5rem;
+        flex-wrap: wrap;
 
         .chef {
             position: relative;
@@ -17,13 +19,14 @@
             justify-content: flex-end;
             gap: 1vw;
             width: 27vw;
+            max-width: 350px;
             height: 57vh;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 26rem;
+            background-size: cover;
             padding: 1.5rem;
             overflow: hidden;
-            transition: 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
         
             &::after {
                 content: "";
@@ -100,19 +103,39 @@
     }
 
 
+@media (max-width: 768px) { 
+    .chefs {
+        min-height: auto; 
+        padding: 4vh 0;
+    }
+    .sac {
+        flex-direction: row; 
+        justify-content: space-around; 
+    }
+    .sac .chef {
+        width: 48%; 
+        height: 45vh;
+        max-width: unset; 
+    }
+} 
+
+
 @media (max-width: 480px) {
-    #chefs {
-        height: 210vh;
-        .top-left-title {
-            padding-left: 1rem;
-        }
-
-        .t-main {
-            flex-direction: column;
-
-            .chef {
-                width: 95vw;
-            }
-        }
+    .chefs {
+        min-height: auto; 
+    }
+    .sac {
+        flex-direction: column; 
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .sac .chef {
+        width: 90vw; 
+        max-width: 320px; 
+        height: 50vh; 
+        min-width: unset; 
+    }
+    #chefs .top-left-title {
+        padding-left: 1rem; 
     }
 }

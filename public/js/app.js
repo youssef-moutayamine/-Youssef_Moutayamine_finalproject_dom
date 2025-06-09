@@ -1,71 +1,83 @@
-// // ^ Modal logique
 
-// let modalBtn = document.querySelector(".book-btn")
-// let myModal = document.getElementById("modal")
-// let hide = document.getElementById("hide")
-// let submit = document.getElementById("submit")
-// let pack = document.querySelector(".pack")
+const updateSubmitButton = () => {
+    const submitButton = document.getElementById("submit");
+    const selectedTable = document.querySelector('input[name="table"]:checked');
+    if (submitButton) {
+        submitButton.disabled = !selectedTable;
+    }
+}
 
-// modalBtn.addEventListener("click", (e) => {
-//     let modalAtt = modalBtn.getAttribute("my-attribute");
-//     if (modalAtt === myModal.id) {
-//         pack.classList.add("backdrop")
-//         myModal.classList.remove("close")
-//         document.body.style.overflow = "hidden"
-//     }
-// })
+// ^ Modal logic
+document.addEventListener("DOMContentLoaded", () => {
+    let modalBtn = document.querySelector(".book-btn");
+    let myModal = document.getElementById("modal");
+    let hide = document.getElementById("hide");
+    let submit = document.getElementById("submit");
+    let pack = document.querySelector(".pack");
 
-// hide.addEventListener("click", () => {
-//     myModal.classList.add("close")
-//     document.body.style.overflow = "auto"
-//     pack.classList.remove("backdrop")
-// })
+    if (modalBtn) {
+        modalBtn.addEventListener("click", () => {
+            pack.classList.add("backdrop");
+            myModal.classList.remove("close");
+            document.body.style.overflow = "hidden";
+        });
+    }
 
-// pack.addEventListener("click", (e) => {
-//     if (e.target === pack) {
-//         myModal.classList.add("close")
-//         document.body.style.overflow = "auto"
-//         pack.classList.remove("backdrop")
-//     }
-// })
+    if (hide) {
+        hide.addEventListener("click", () => {
+            myModal.classList.add("close");
+            document.body.style.overflow = "auto";
+            pack.classList.remove("backdrop");
+        });
+    }
 
-// document.addEventListener("keydown", (e) => {
-//     if (e.key === "Escape" && !myModal.classList.contains("close")) {
-//         myModal.classList.add("close")
-//         document.body.style.overflow = "auto"
-//         pack.classList.remove("backdrop")
-//     }
-// })
+    if (pack) {
+        pack.addEventListener("click", (e) => {
+            if (e.target === pack) {
+                myModal.classList.add("close");
+                document.body.style.overflow = "auto";
+                pack.classList.remove("backdrop");
+            }
+        });
+    }
 
-// submit.addEventListener("click", (e) => {
-//     e.preventDefault();
-    
-//     const selectedTable = document.querySelector('input[name="table"]:checked');
-    
-//     if (selectedTable) {
-//         const tableText = selectedTable.nextElementSibling.textContent;
-//         alert(`${tableText} reserved successfully!`);
-//         myModal.classList.add("close")
-//         document.body.style.overflow = "auto"
-//         pack.classList.remove("backdrop")
-        
-//         selectedTable.checked = false;
-//         updateSubmitButton();
-//     } else {
-//         alert("Please select a table first!");
-//     }
-// })
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && myModal && !myModal.classList.contains("close")) {
+            myModal.classList.add("close");
+            document.body.style.overflow = "auto";
+            pack.classList.remove("backdrop");
+        }
+    });
 
-// // Add listeners to radio buttons
-// const radioButtons = document.querySelectorAll('input[name="table"]');
-// radioButtons.forEach(radio => {
-//     radio.addEventListener('change', updateSubmitButton);
-// });
+    if (submit) {
+        submit.addEventListener("click", (e) => {
+            e.preventDefault();
+            const selectedTable = document.querySelector('input[name="table"]:checked');
+            if (selectedTable) {
+                const tableText = selectedTable.nextElementSibling.textContent;
+                alert(`${tableText} reserved successfully!`);
+                myModal.classList.add("close");
+                document.body.style.overflow = "auto";
+                pack.classList.remove("backdrop");
+                selectedTable.checked = false;
+                updateSubmitButton();
+            } else {
+                alert("Please select a table first!");
+            }
+        });
+    }
 
-// // Initialize
-// updateSubmitButton();
+    const radioButtons = document.querySelectorAll('input[name="table"]');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', updateSubmitButton);
+    });
 
-// filter buttons
+    updateSubmitButton();
+});
+
+
+
+// !filter buttons
 
 document.addEventListener('click', () => {
     let filterButtons = document.querySelectorAll('.filter-button');
@@ -135,20 +147,16 @@ list.addEventListener('click', () => {
 
 
 // ~ special filter
+
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing tabs...');
     
     const tabItems = document.querySelectorAll('.tab-item');
     const tabPanels = document.querySelectorAll('.tab-panel');
     
-    console.log('Found tab items:', tabItems.length);
-    console.log('Found tab panels:', tabPanels.length);
     
-    // Function pour change les tabs
+    // Function to switch tabs
     function switchTab(targetTabId) {
-        console.log('Switching to tab:', targetTabId);
         
-        // Remove active class from all tabs and panels
         tabItems.forEach(function(item) {
             item.classList.remove('active');
         });
@@ -166,18 +174,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetPanel = document.getElementById(targetTabId);
         if (targetPanel) {
             targetPanel.classList.add('active');
-            console.log('Panel activated:', targetTabId);
         } else {
-            console.error('Panel not found:', targetTabId);
         }
     }
     
     tabItems.forEach(function(item, index) {
-        console.log('Adding listener to tab:', index, item.getAttribute('data-tab'));
         
         item.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Tab clicked:', this.getAttribute('data-tab'));
             
             const tabId = this.getAttribute('data-tab');
             if (tabId) {
@@ -186,7 +190,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    console.log('Initialization complete');
 });
 
 const specialsTabs = document.querySelectorAll('.tab-item');
