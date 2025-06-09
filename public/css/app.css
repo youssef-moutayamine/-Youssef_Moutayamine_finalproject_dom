@@ -49966,41 +49966,109 @@ nav {
   border: 2px solid #CDA45E;
   border-radius: 25px;
   background-color: rgba(12, 11, 9, 0.61);
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .book-btn:hover {
   background-color: #CDA45E !important;
+  transform: translateY(-2px);
 }
 
 .backdrop {
-  background-color: rgba(0, 0, 0, 0.321);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
+  backdrop-filter: blur(3px);
 }
 
 .content {
   padding: 2vh;
   height: fit-content;
   width: 40%;
-  background-color: rgb(230, 240, 240);
+  background: linear-gradient(135deg, #2c2416 0%, #1a1710 100%);
   border-radius: 20px;
   margin: auto;
-  margin-top: 2vh;
+  margin-top: 5vh;
   z-index: 9999;
+  border: 1px solid rgba(205, 164, 94, 0.3);
+  color: white;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+.content:not(.close) {
+  transform: scale(1);
 }
 
 .modalHeader {
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid rgba(205, 164, 94, 0.4);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.modalHeader h1, .modalHeader .h1 {
+  color: #CDA45E;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 400;
+}
+.modalHeader h3, .modalHeader .h3 {
+  color: #CDA45E;
+  margin-bottom: 1rem;
 }
 
 .myinputs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3vh;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.myinputs > div {
+  padding: 0.8rem;
+  background-color: rgba(205, 164, 94, 0.1);
+  border: 1px solid rgba(205, 164, 94, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.myinputs > div:hover {
+  background-color: rgba(205, 164, 94, 0.2);
+}
+.myinputs > div input[type=radio] {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(205, 164, 94, 0.5);
+  border-radius: 50%;
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+}
+.myinputs > div input[type=radio]:checked {
+  border-color: #CDA45E;
+}
+.myinputs > div input[type=radio]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #CDA45E;
+  border-radius: 50%;
+}
+.myinputs > div:has(input:checked) {
+  background-color: rgba(205, 164, 94, 0.25);
+  border-color: #CDA45E;
+}
+.myinputs > div h5, .myinputs > div .h5 {
+  color: white;
+  margin: 0;
+  font-weight: 400;
 }
 
 .close {
@@ -50008,17 +50076,36 @@ nav {
 }
 
 .green {
-  background-color: green;
+  background-color: #28a745;
   padding: 1vh 3vw;
   border: 0;
   border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.green:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+.green:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .red {
-  background-color: rgb(214, 7, 7);
+  background-color: #dc3545;
   padding: 1vh 3vw;
   border: 0;
   border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.red:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
 }
 
 .right {
@@ -50060,6 +50147,13 @@ nav {
   }
   .book-btn {
     display: none;
+  }
+  .content {
+    width: 95%;
+    margin: 2vh auto;
+  }
+  .myinputs {
+    grid-template-columns: 1fr;
   }
 }
 .my_title {
@@ -50380,7 +50474,7 @@ nav {
   }
 }
 .specials {
-  padding: 2vh;
+  padding: 5vh 0;
   background: #0C0B09;
 }
 
@@ -50410,6 +50504,10 @@ nav {
   margin-bottom: 50px;
 }
 
+.filters-sac {
+  border-right: 1px solid #CDA45E;
+}
+
 .tab-menu {
   list-style: none;
   padding: 0;
@@ -50419,25 +50517,29 @@ nav {
 .tab-item {
   background-color: #0C0B09;
   margin-bottom: 1px;
-  color: #fff !important;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .tab-item a {
   display: block;
   padding: 15px 20px;
-  color: #000;
+  color: white;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
+.tab-item a:hover {
+  color: #CDA45E;
+}
+
 .tab-item.active {
-  background-color: #0f0f0f;
+  background-color: #CDA45E;
 }
 
 .tab-item.active a {
-  color: #fff;
+  color: #0C0B09 !important;
 }
 
 .tab-panel {
@@ -50456,6 +50558,7 @@ nav {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .content-subtitle {
@@ -50483,11 +50586,14 @@ nav {
   object-fit: cover;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .image-box {
     margin: 30px auto 0;
     width: 250px;
     height: 250px;
+  }
+  .specials-label::after {
+    width: 80px;
   }
 }
 .event {

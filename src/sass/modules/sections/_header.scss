@@ -31,73 +31,251 @@ nav {
     color: #fff
 }
 
+// .book-btn {
+//     padding: 1vh 3vw;
+//     color: #fff;
+//     border: 2px solid $gold;
+//     border-radius: 25px;
+//     background-color: rgb(12 11 9 / 61%);
+// }
+
+// .book-btn:hover {
+//     background-color: $gold !important;
+// }
+
+// .backdrop {
+//     background-color: rgba(0, 0, 0, 0.321);
+//     width: 100vw;
+//     height: 100vh;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     z-index: 9999;
+
+// }
+
+// .content {
+//     padding: 2vh;
+//     height: fit-content;
+//     width: 40%;
+//     background-color: rgb(230, 240, 240);
+//     border-radius: 20px;
+//     margin: auto;
+//     margin-top: 2vh;
+//     z-index: 9999;
+
+// }
+
+
+// .modalHeader {
+//     border-bottom: 2px solid gray;
+// }
+
+// .myinputs {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 3vh;
+// }
+
+// .close {
+//     display: none;
+// }
+
+// .green {
+//     background-color: green;
+//     padding: 1vh 3vw;
+//     border: 0;
+//     border-radius: 8px;
+
+// }
+
+// .red {
+//     background-color: rgb(214, 7, 7);
+//     padding: 1vh 3vw;
+//     border: 0;
+//     border-radius: 8px;
+// }
+// .right {
+// right: 0 !important;
+// }
+
+
 .book-btn {
     padding: 1vh 3vw;
     color: #fff;
     border: 2px solid $gold;
     border-radius: 25px;
     background-color: rgb(12 11 9 / 61%);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
 .book-btn:hover {
     background-color: $gold !important;
+    transform: translateY(-2px);
 }
 
+// Your original backdrop
 .backdrop {
-    background-color: rgba(0, 0, 0, 0.321);
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-
+    backdrop-filter: blur(3px);
 }
 
+// Your original content with enhancements
 .content {
     padding: 2vh;
     height: fit-content;
     width: 40%;
-    background-color: rgb(230, 240, 240);
+    background: linear-gradient(135deg, #2c2416 0%, #1a1710 100%);
     border-radius: 20px;
     margin: auto;
-    margin-top: 2vh;
+    margin-top: 5vh;
     z-index: 9999;
-
+    border: 1px solid rgba($gold, 0.3);
+    color: white;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    
+    &:not(.close) {
+        transform: scale(1);
+    }
 }
 
-
+// Your original modal header
 .modalHeader {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid rgba($gold, 0.4);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    
+    h1 {
+        color: $gold;
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: 400;
+    }
+    
+    h3 {
+        color: $gold;
+        margin-bottom: 1rem;
+    }
 }
 
+// Your original inputs grid with styling
 .myinputs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3vh;
+    gap: 1rem;
+    margin: 2rem 0;
+    
+    // Style the table option containers
+    > div {
+        padding: 0.8rem;
+        background-color: rgba($gold, 0.1);
+        border: 1px solid rgba($gold, 0.3);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: rgba($gold, 0.2);
+        }
+        
+        // Custom radio buttons
+        input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba($gold, 0.5);
+            border-radius: 50%;
+            position: relative;
+            appearance: none;
+            cursor: pointer;
+            
+            &:checked {
+                border-color: $gold;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 8px;
+                    height: 8px;
+                    background-color: $gold;
+                    border-radius: 50%;
+                }
+            }
+        }
+        
+        // Selected state
+        &:has(input:checked) {
+            background-color: rgba($gold, 0.25);
+            border-color: $gold;
+        }
+        
+        h5 {
+            color: white;
+            margin: 0;
+            font-weight: 400;
+        }
+    }
 }
 
+// Your original close class
 .close {
     display: none;
 }
 
+// Your original buttons with enhancements
 .green {
-    background-color: green;
+    background-color: #28a745;
     padding: 1vh 3vw;
     border: 0;
     border-radius: 8px;
-
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: #218838;
+        transform: translateY(-1px);
+    }
+    
+    &:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+        transform: none;
+    }
 }
 
 .red {
-    background-color: rgb(214, 7, 7);
+    background-color: #dc3545;
     padding: 1vh 3vw;
     border: 0;
     border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: #c82333;
+        transform: translateY(-1px);
+    }
 }
+
+// Your original right class
 .right {
-right: 0 !important;
+    right: 0 !important;
 }
+
+
 
 @media (max-width: 480px) {
     nav {
@@ -141,7 +319,14 @@ right: 0 !important;
     .book-btn {
         display: none;
     }
-
+ .content {
+        width: 95%;
+        margin: 2vh auto;
+    }
+    
+    .myinputs {
+        grid-template-columns: 1fr;
+    }
     
 }
 

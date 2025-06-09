@@ -1,27 +1,69 @@
-// ^ Modal logique
-let modalBtn = document.querySelector(".book-btn")
-let myModal = document.getElementById("modal")
-let hide = document.getElementById("hide")
-let submit = document.getElementById("submit")
-let pack = document.querySelector(".pack")
+// // ^ Modal logique
 
-modalBtn.addEventListener("click", (e) => {
-    let modalAtt = modalBtn.getAttribute("my-attribute");
-    if (modalAtt === myModal.id) {
-        pack.classList.add("backdrop")
-        myModal.classList.remove("close")
-        document.body.style.overflow = "hidden"
+// let modalBtn = document.querySelector(".book-btn")
+// let myModal = document.getElementById("modal")
+// let hide = document.getElementById("hide")
+// let submit = document.getElementById("submit")
+// let pack = document.querySelector(".pack")
 
-    }
-})
+// modalBtn.addEventListener("click", (e) => {
+//     let modalAtt = modalBtn.getAttribute("my-attribute");
+//     if (modalAtt === myModal.id) {
+//         pack.classList.add("backdrop")
+//         myModal.classList.remove("close")
+//         document.body.style.overflow = "hidden"
+//     }
+// })
 
-hide.addEventListener("click", () => {
-    myModal.classList.add("close")
-    document.body.style.overflow = "auto"
-    pack.classList.remove("backdrop")
-})
+// hide.addEventListener("click", () => {
+//     myModal.classList.add("close")
+//     document.body.style.overflow = "auto"
+//     pack.classList.remove("backdrop")
+// })
 
+// pack.addEventListener("click", (e) => {
+//     if (e.target === pack) {
+//         myModal.classList.add("close")
+//         document.body.style.overflow = "auto"
+//         pack.classList.remove("backdrop")
+//     }
+// })
 
+// document.addEventListener("keydown", (e) => {
+//     if (e.key === "Escape" && !myModal.classList.contains("close")) {
+//         myModal.classList.add("close")
+//         document.body.style.overflow = "auto"
+//         pack.classList.remove("backdrop")
+//     }
+// })
+
+// submit.addEventListener("click", (e) => {
+//     e.preventDefault();
+    
+//     const selectedTable = document.querySelector('input[name="table"]:checked');
+    
+//     if (selectedTable) {
+//         const tableText = selectedTable.nextElementSibling.textContent;
+//         alert(`${tableText} reserved successfully!`);
+//         myModal.classList.add("close")
+//         document.body.style.overflow = "auto"
+//         pack.classList.remove("backdrop")
+        
+//         selectedTable.checked = false;
+//         updateSubmitButton();
+//     } else {
+//         alert("Please select a table first!");
+//     }
+// })
+
+// // Add listeners to radio buttons
+// const radioButtons = document.querySelectorAll('input[name="table"]');
+// radioButtons.forEach(radio => {
+//     radio.addEventListener('change', updateSubmitButton);
+// });
+
+// // Initialize
+// updateSubmitButton();
 
 // filter buttons
 
@@ -83,10 +125,8 @@ showSlides(currentcaro);
 
 
 let list = document.getElementById("list");
-console.log(list);
 
 let navLinks = document.querySelector('.navigation');
-console.log(navLinks);
 
 list.addEventListener('click', () => {
     navLinks.classList.toggle("right");
@@ -94,4 +134,79 @@ list.addEventListener('click', () => {
 });
 
 
+// ~ special filter
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing tabs...');
+    
+    const tabItems = document.querySelectorAll('.tab-item');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    
+    console.log('Found tab items:', tabItems.length);
+    console.log('Found tab panels:', tabPanels.length);
+    
+    // Function pour change les tabs
+    function switchTab(targetTabId) {
+        console.log('Switching to tab:', targetTabId);
+        
+        // Remove active class from all tabs and panels
+        tabItems.forEach(function(item) {
+            item.classList.remove('active');
+        });
+        
+        tabPanels.forEach(function(panel) {
+            panel.classList.remove('active');
+        });
+        
+        // Add active class to clicked tab
+        const clickedTab = document.querySelector(`[data-tab="${targetTabId}"]`);
+        if (clickedTab) {
+            clickedTab.classList.add('active');
+        }
+        
+        const targetPanel = document.getElementById(targetTabId);
+        if (targetPanel) {
+            targetPanel.classList.add('active');
+            console.log('Panel activated:', targetTabId);
+        } else {
+            console.error('Panel not found:', targetTabId);
+        }
+    }
+    
+    tabItems.forEach(function(item, index) {
+        console.log('Adding listener to tab:', index, item.getAttribute('data-tab'));
+        
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Tab clicked:', this.getAttribute('data-tab'));
+            
+            const tabId = this.getAttribute('data-tab');
+            if (tabId) {
+                switchTab(tabId);
+            }
+        });
+    });
+    
+    console.log('Initialization complete');
+});
 
+const specialsTabs = document.querySelectorAll('.tab-item');
+const specialsPanels = document.querySelectorAll('.tab-panel');
+
+specialsTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        specialsTabs.forEach(t => t.classList.remove('active'));
+        specialsPanels.forEach(p => p.classList.remove('active'));
+        
+        tab.classList.add('active');
+        
+        const panelId = tab.getAttribute('data-tab');
+        const panel = document.getElementById(panelId);
+        if (panel) {
+            panel.classList.add('active');
+        }
+    });
+});
+
+if (specialsTabs.length > 0) {
+    specialsTabs[0].click();
+}

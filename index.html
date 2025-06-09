@@ -68,11 +68,10 @@
 
         <!-- &modal content  -->
 
-        <!-- Modal -->
         <div class="pack">
-            <div class="content close " id="modal">
+            <div class="content close" id="modal">
                 <!-- Modal Content -->
-                <div class="d-flex flex-column  ">
+                <div class="d-flex flex-column">
                     <div class="modalHeader">
                         <h1>Book a table :</h1>
                     </div>
@@ -82,42 +81,35 @@
                         </div>
                         <div class="myinputs">
                             <div class="d-flex align-items-center gap-2">
-                                <input class="" type="radio">
+                                <input class="" type="radio" name="table">
                                 <h5>Table 1</h5>
                             </div>
-
                             <div class="d-flex align-items-center gap-2">
-                                <input class="" type="radio">
+                                <input class="" type="radio" name="table">
                                 <h5>Table 2</h5>
                             </div>
-
                             <div class="d-flex align-items-center gap-2">
-                                <input class="" type="radio">
+                                <input class="" type="radio" name="table">
                                 <h5>Table 3</h5>
                             </div>
-
                             <div class="d-flex align-items-center gap-2">
-                                <input class="" type="radio">
+                                <input class="" type="radio" name="table">
                                 <h5>Table 4</h5>
                             </div>
-
                             <div class="d-flex align-items-center gap-2">
-                                <input class="" type="radio">
+                                <input class="" type="radio" name="table">
                                 <h5>Table 5</h5>
                             </div>
-
                             <div class="d-flex align-items-center gap-2">
-                                <input class="" type="radio">
+                                <input class="" type="radio" name="table">
                                 <h5>Table 6</h5>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
-                <div class="d-flex align-items-center justify-content-end gap-2  ">
-                    <button class="red" id="hide" type="submit">Close</button>
-                    <button class="green" id="submit" type="submit">Reserve</button>
+                <div class="d-flex align-items-center justify-content-end gap-2">
+                    <button class="red" id="hide" type="button">Close</button>
+                    <button class="green" id="submit" type="button">Reserve</button>
                 </div>
             </div>
         </div>
@@ -373,13 +365,23 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
+                <div class="col-md-4 mb-4 mb-md-0 filters-sac">
                     <ul class="tab-menu" id="specialsTabs">
-                        <li class="tab-item active"><a href="">Modi sit est</a></li>
-                        <li class="tab-item "><a class="text-white" href="">Unde praesentium sed</a></li>
-                        <li class="tab-item "><a class="text-white" href="">Pariatur explicabo vel</a></li>
-                        <li class="tab-item "><a class="text-white" href="">Nostrum qui quasi</a></li>
-                        <li class="tab-item "><a class="text-white" href="">Iusto ut expedita aut</a></li>
+                        <li class="tab-item active" data-tab="tab1">
+                            <a href="javascript:void(0)">Modi sit est</a>
+                        </li>
+                        <li class="tab-item" data-tab="tab2">
+                            <a href="javascript:void(0)">Unde praesentium sed</a>
+                        </li>
+                        <li class="tab-item" data-tab="tab3">
+                            <a href="javascript:void(0)">Pariatur explicabo vel</a>
+                        </li>
+                        <li class="tab-item" data-tab="tab4">
+                            <a href="javascript:void(0)">Nostrum qui quasi</a>
+                        </li>
+                        <li class="tab-item" data-tab="tab5">
+                            <a href="javascript:void(0)">Iusto ut expedita aut</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -387,13 +389,14 @@
                     <div class="tab-panel active" id="tab1">
                         <div class="row">
                             <div class="col-lg-7 content-box">
-                                <h3 class="content-title text-white">Architecto ut aperiam autem id</h3>
-                                <p class="content-subtitle">Qui laudantium consequatur laborum sit qui ad sapiente dila
-                                    parde sonata raqer a videna mareta paulona marka</p>
-                                <p class="content-text">Et nobis maiores eius. Voluptatibus ut enim blanditiis atque
-                                    harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
-                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat
-                                    quos qui similique accusamus nostrum rem vero</p>
+                                <h3 class="content-title">Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
+                                <p class="content-subtitle">Omnis blanditiis saepe eos autem qui sunt debitis porro
+                                    quia.</p>
+                                <p class="content-text">
+                                    Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut
+                                    non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati
+                                    sed est sint aut vitae molestiae voluptate vel
+                                </p>
                             </div>
                             <div class="col-lg-5 d-flex align-items-center">
                                 <div class="image-box">
@@ -408,10 +411,12 @@
                             <div class="col-lg-7 content-box">
                                 <h3 class="content-title">Unde praesentium sed</h3>
                                 <p class="content-subtitle">Short description for the second special menu item</p>
-                                <p class="content-text">Et nobis maiores eius. Voluptatibus ut enim blanditiis atque
-                                    harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
-                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat
-                                    quos qui similique accusamus nostrum rem vero</p>
+                                <p class="content-text">
+                                    Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint.
+                                    Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
+                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem
+                                    quaerat quos qui similique accusamus nostrum rem vero
+                                </p>
                             </div>
                             <div class="col-lg-5 d-flex align-items-center">
                                 <div class="image-box">
@@ -426,10 +431,12 @@
                             <div class="col-lg-7 content-box">
                                 <h3 class="content-title">Pariatur explicabo vel</h3>
                                 <p class="content-subtitle">Short description for the third special menu item</p>
-                                <p class="content-text">Et nobis maiores eius. Voluptatibus ut enim blanditiis atque
-                                    harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
-                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat
-                                    quos qui similique accusamus nostrum rem vero</p>
+                                <p class="content-text">
+                                    Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint.
+                                    Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
+                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem
+                                    quaerat quos qui similique accusamus nostrum rem vero
+                                </p>
                             </div>
                             <div class="col-lg-5 d-flex align-items-center">
                                 <div class="image-box">
@@ -444,10 +451,12 @@
                             <div class="col-lg-7 content-box">
                                 <h3 class="content-title">Nostrum qui quasi</h3>
                                 <p class="content-subtitle">Short description for the fourth special menu item</p>
-                                <p class="content-text">Et nobis maiores eius. Voluptatibus ut enim blanditiis atque
-                                    harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
-                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat
-                                    quos qui similique accusamus nostrum rem vero</p>
+                                <p class="content-text">
+                                    Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint.
+                                    Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
+                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem
+                                    quaerat quos qui similique accusamus nostrum rem vero
+                                </p>
                             </div>
                             <div class="col-lg-5 d-flex align-items-center">
                                 <div class="image-box">
@@ -462,10 +471,12 @@
                             <div class="col-lg-7 content-box">
                                 <h3 class="content-title">Iusto ut expedita aut</h3>
                                 <p class="content-subtitle">Short description for the fifth special menu item</p>
-                                <p class="content-text">Et nobis maiores eius. Voluptatibus ut enim blanditiis atque
-                                    harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
-                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat
-                                    quos qui similique accusamus nostrum rem vero</p>
+                                <p class="content-text">
+                                    Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint.
+                                    Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui.
+                                    Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem
+                                    quaerat quos qui similique accusamus nostrum rem vero
+                                </p>
                             </div>
                             <div class="col-lg-5 d-flex align-items-center">
                                 <div class="image-box">
@@ -478,7 +489,6 @@
             </div>
         </div>
     </div>
-
     <!-- ~ Event part -->
 
     <div id="events" class="event container-fluid d-flex align-items-center gap-3">
@@ -844,14 +854,14 @@
                     <div class=" d-flex gap-3">
 
                         <a href=""><i class="fab fa-facebook-f text-white"></i></a>
-                        <a href=""><i class="fab fa-x-twitter text-white" ></i></a>
+                        <a href=""><i class="fab fa-x-twitter text-white"></i></a>
                         <a href=""><i class="fab fa-instagram text-white"></i></a>
-                        <a href=""><i class="fab fa-linkedin-in text-white" ></i></a>
+                        <a href=""><i class="fab fa-linkedin-in text-white"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-3 links">
-                    <h6 >Useful Links</h6>
+                    <h6>Useful Links</h6>
                     <div>
                         <a href="#">Home</a>
                         <a href="#">About us</a>
@@ -894,7 +904,7 @@
                     Reserved</span></p>
             <div class="">
 
-               <p >  Designed by <span class="text-gold">Youssef Moutayamine</span></p>
+                <p> Designed by <span class="text-gold">Youssef Moutayamine</span></p>
             </div>
         </div>
 
